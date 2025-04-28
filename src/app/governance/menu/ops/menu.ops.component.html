@@ -1,0 +1,55 @@
+<form nz-form [formGroup]="crudForm" (ngSubmit)="createOrUpdate()">
+    <app-form-general [parentForm]="crudForm" [pageName]="pageName" [crudOps]="crudOps"
+                      [object]="object"></app-form-general>
+    <div nz-row>
+        <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="8" [nzXXl]="8">
+            <app-form-input [controlDesc]="controlDesc.input" controlName="path"
+                            [pageName]="pageName" [crudOps]="crudOps" formControlName="path"/>
+        </div>
+        <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="8" [nzXXl]="8">
+            <app-form-input controlName="rootMenuId" [controlDesc]="controlDesc.inputSpecial"
+                            [pageName]="pageName" [crudOps]="crudOps" formControlName="rootMenuId"/>
+        </div>
+        <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="8" [nzXXl]="8">
+            <app-form-numeric controlName="displayPosition" [controlDesc]="controlDesc.numeric"
+                              [pageName]="pageName" [crudOps]="crudOps" formControlName="displayPosition"/>
+        </div>
+    </div>
+    <div nz-row>
+        <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="8" [nzXXl]="8">
+            <app-form-input controlName="icon" [controlDesc]="controlDesc.input"
+                            [pageName]="pageName" [crudOps]="crudOps" formControlName="icon"/>
+        </div>
+        <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="8" [nzXXl]="8">
+            <app-form-select-one formControlName="iconTheme" controlName="iconTheme"
+                                 [controlOptions]="iconThemeOptions"
+                                 [pageName]="pageName" [crudOps]="crudOps"/>
+        </div>
+        <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="8" [nzXXl]="8">
+            <app-form-select-one formControlName="iconType" controlName="iconType"
+                                 [controlOptions]="iconTypeOptions"
+                                 [pageName]="pageName" [crudOps]="crudOps"/>
+        </div>
+    </div>
+    <div nz-row>
+        <!--
+        <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="12" [nzXXl]="12">
+            <app-form-select-one formControlName="moduleId" controlName="moduleId"
+                                 [controlOptions]="moduleIdNameMap"
+                                 [pageName]="pageName" [crudOps]="crudOps"/>
+        </div>
+        -->
+        <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="8" [nzXXl]="8">
+            <app-form-select-one formControlName="menuType" controlName="menuType"
+                                 [controlOptions]="menuTypeOptions"
+                                 [pageName]="pageName" [crudOps]="crudOps"/>
+        </div>
+        <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="8" [nzXXl]="8">
+            <app-form-switch [controlDesc]="controlDesc.switch" controlName="dashboardCountCard"
+                             [pageName]="pageName" [crudOps]="crudOps" formControlName="dashboardCountCard"/>
+        </div>
+    </div>
+
+    <app-form-audit [object]="object" [crudOps]="crudOps"></app-form-audit>
+    <app-form-submit-buttons [crudOps]="crudOps" [crudForm]="crudForm"></app-form-submit-buttons>
+</form>

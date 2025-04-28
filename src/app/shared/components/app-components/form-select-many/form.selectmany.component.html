@@ -1,0 +1,25 @@
+<nz-form-item class="form-field-row">
+    <nz-form-label class="form-field-label"
+                   [nzRequired]="isRequired">{{ appCtrlService.getControlText(pageName, controlName) }}
+    </nz-form-label>
+    <nz-form-control class="form-field-control" *ngIf="crudOps !== permissions.view"
+                     [nzValidateStatus]="control"
+                     [nzHasFeedback]="control?.invalid && control.dirty"
+                     [nzErrorTip]="statusErrorTemplate">
+        <nz-select nzSize="small" nzMode="multiple" nzShowSearch [nzMaxTagCount]="3"
+                   [formControl]="control" [disabled]="isDisabled"
+                   nzPlaceHolder="{{'app.general.pagination.select' | translate}}">
+            <nz-option *ngFor="let entry of controlOptions | keyvalue"
+                       [nzLabel]="entry.value" [nzValue]="entry.key"></nz-option>
+        </nz-select>
+    </nz-form-control>
+    <ng-template #statusErrorTemplate>
+        <app-field-errors [control]="control" [controlName]=controlName></app-field-errors>
+    </ng-template>
+    <nz-form-control class="form-field-control" *ngIf="crudOps === permissions.view">
+        <ng-container *ngFor="let obj of control.value">
+            <span *ngIf="controlOptions">{{ controlOptions[obj] }}</span>
+            &nbsp;
+        </ng-container>
+    </nz-form-control>
+</nz-form-item>

@@ -1,0 +1,54 @@
+<nz-form-item *ngIf="control" class="form-field-row">
+    <nz-form-label class="form-field-label" *ngIf="!isHideLabel" [nzRequired]="isRequired">
+        {{ appCtrlService.getControlText(pageName, controlName) }}
+    </nz-form-label>
+
+    <nz-form-control
+            class="form-field-control"
+            *ngIf="crudOps !== permissions.view"
+            [nzValidateStatus]="control"
+            [nzHasFeedback]="control?.invalid && control?.dirty"
+            [nzErrorTip]="errorTemplate">
+
+        <div style="display: flex; gap: 8px; align-items: center;">
+            <!-- Country Code Select -->
+            <nz-select
+                    style="width: 100px;"
+                    [ngModel]="selectedCountry.code"
+                    (ngModelChange)="onCountryChange($event)"
+                    [nzDisabled]="isDisabled"
+                    nzSize="small"
+                    nzShowSearch
+                    [nzFilterOption]="filterOption">
+                <nz-option
+                        *ngFor="let country of countryList"
+                        [nzLabel]="country.flag + ' ' + country.dialCode"
+                        [nzValue]="country.code">
+                </nz-option>
+            </nz-select>
+
+            <!-- Phone Number Input -->
+            <input
+                #phoneInputRef
+                nz-input
+                style="flex: 1;"
+                [value]="phoneInput"
+                (input)="onPhoneChange(phoneInputRef.value)"
+                (blur)="onTouched?.()"
+                [disabled]="isDisabled"
+                [required]="isRequired"
+                [placeholder]="appCtrlService.getControlText(pageName, controlName)"
+                nz-tooltip
+                [nzTooltipTitle]="appCtrlService.generateToolTip(controlDesc, pageName, controlName) || ''"
+            />
+        </div>
+    </nz-form-control>
+
+    <ng-template #errorTemplate>
+        <app-field-errors [control]="control" [controlName]="controlName"></app-field-errors>
+    </ng-template>
+
+    <nz-form-control *ngIf="crudOps === permissions.view" class="form-field-control">
+        <span>{{ selectedCountry?.dialCode }}{{ phoneInput }}</span>
+    </nz-form-control>
+</nz-form-item>

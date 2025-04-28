@@ -1,0 +1,66 @@
+<div class="header">
+    <div class="logo logo-dark">
+        <a href="">
+            <img src="assets/images/logo/logo.png" alt="Logo">
+            <img class="logo-fold" src="assets/images/logo/logo-fold.png" alt="Logo">
+        </a>
+    </div>
+    <div class="logo logo-white">
+        <a href="">
+            <img src="assets/images/logo/logo-white.png" alt="Logo">
+            <img class="logo-fold" src="assets/images/logo/logo-fold-white.png" alt="Logo">
+        </a>
+    </div>
+    <div class="nav-wrap">
+        <ul class="nav-left">
+            <li class="desktop-toggle">
+                <a (click)="toggleFold()">
+                    <i nz-icon [nzType]="isFolded? 'menu-unfold':'menu-fold'" theme="outline"></i>
+                </a>
+            </li>
+            <li class="mobile-toggle">
+                <a (click)="toggleExpand()">
+                    <i nz-icon [nzType]="isExpand? 'menu-fold': 'menu-unfold'" theme="outline"></i>
+                </a>
+            </li>
+        </ul>
+        <ul class="nav-right">
+            <li>
+                <a nz-popconfirm
+                   nzPopconfirmTitle="{{'app.general.popup.sign-out-popup' | translate}}"
+                   nzPopconfirmPlacement="bottom"
+                   nzOkText="{{'app.general.button.yes' | translate}}"
+                   nzCancelText="{{'app.general.button.no' | translate}}"
+                   (nzOnConfirm)="logout()">
+                    {{ currentUserName.split(' ')[0] }}
+                    <i nz-icon nzType="logout" theme="outline"></i>
+                </a>
+            </li>
+            <li>
+                <a (click)="quickViewToggle()">
+                    <i nz-icon nzType="appstore" theme="outline"></i>
+                </a>
+                <nz-drawer [nzWidth]="280" nzTitle=" {{ 'app.page.quick-view.title' | translate }}" [nzClosable]="false"
+                           [nzVisible]="quickViewVisible"
+                           nzPlacement="right" (nzOnClose)="quickViewToggle()">
+                    <ng-container *nzDrawerContent>
+                        <!--
+                        <app-quick-view></app-quick-view>
+                        -->
+                        <ul nz-menu nzMode="inline">
+                            <ul>
+                                <li nz-menu-item nzSelected>
+                                    <a (click)="logout()">
+                                        <i nz-icon nzType="logout" theme="outline"></i>
+                                        &nbsp;&nbsp;
+                                        {{ 'app.page.quick-view.sign-out' | translate }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </ul>
+                    </ng-container>
+                </nz-drawer>
+            </li>
+        </ul>
+    </div>
+</div>

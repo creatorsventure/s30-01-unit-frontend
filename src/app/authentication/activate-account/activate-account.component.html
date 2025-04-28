@@ -1,0 +1,162 @@
+<div class="container-fluid p-0 h-100">
+    <div class="row no-gutters h-100">
+        <div class="col-lg-4 d-none d-lg-flex" style="background-image:url('assets/images/others/sign-up-1.jpg')">
+            <div class="d-flex h-100 p-h-40 p-v-15 flex-column justify-content-between">
+                <div>
+                    <img src="assets/images/logo/logo-white.png" alt="">
+                </div>
+                <div>
+                    <h1 class="text-white m-b-20 font-weight-normal">{{ 'app.page.login.content-1' | translate }}</h1>
+                    <p class="text-white font-size-16 opacity-08 text-justify">
+                        {{ 'app.page.login.content-2' | translate }}
+                    </p>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <span class="text-white">© {{ 'app.rights' | translate }}</span>
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a class="text-white text-link" href="">{{ 'app.year' | translate }}</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="text-white text-link" href="">{{ 'app.version' | translate }}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8 bg-white">
+            <div class="container h-100">
+                <div class="row no-gutters h-100 align-items-center">
+                    <div class="col-md-8 col-lg-8 col-xl-8 mx-auto" *ngIf="isValidForm">
+                        <h2>{{ 'app.page.activate-account.sign-up' | translate }}</h2>
+                        <p class="m-b-30">{{ 'app.page.activate-account.sign-up-hint' | translate }}</p>
+                        <div nz-form class="login-form" nzLayout="vertical">
+                            <nz-table #basicTable>
+                                <tr>
+                                    <td>
+                                        <nz-form-item>
+                                            <nz-form-label nzRequired nzFor="name">
+                                                {{ 'app.page.activate-account.label.name' | translate }}
+                                            </nz-form-label>
+                                            <nz-form-control
+                                                    nzErrorTip="{{ 'app.page.activate-account.label.name-hint' | translate }}">
+                                                <input type="text" nz-input [(ngModel)]="verifySignup.adminName"
+                                                       disabled="true"
+                                                       placeholder="{{ 'app.page.activate-account.label.name' | translate }}"
+                                                       id="name">
+                                            </nz-form-control>
+                                        </nz-form-item>
+                                    </td>
+                                    <td>
+                                        <nz-form-item>
+                                            <nz-form-label nzRequired nzFor="id">
+                                                {{ 'app.page.activate-account.label.id' | translate }}
+                                            </nz-form-label>
+                                            <nz-form-control
+                                                    nzErrorTip="{{ 'app.page.activate-account.label.id-hint' | translate }}">
+                                                <input type="text" nz-input [(ngModel)]="verifySignup.adminUserId"
+                                                       disabled="true"
+                                                       placeholder="{{ 'app.page.activate-account.label.id' | translate }}"
+                                                       id="id">
+                                            </nz-form-control>
+                                        </nz-form-item>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <nz-form-item>
+                                            <nz-form-label nzRequired nzFor="countryCode">
+                                                {{ 'app.page.activate-account.label.country-code' | translate }}
+                                            </nz-form-label>
+                                            <nz-form-control
+                                                    nzErrorTip="{{ 'app.page.activate-account.label.country-code-hint' | translate }}">
+                                                <input type="text" nz-input [(ngModel)]="verifySignup.adminCountryCode"
+                                                       disabled="true"
+                                                       placeholder="{{ 'app.page.activate-account.label.country-code' | translate }}"
+                                                       id="countryCode">
+                                            </nz-form-control>
+                                        </nz-form-item>
+                                    </td>
+                                    <td>
+                                        <nz-form-item>
+                                            <nz-form-label nzRequired nzFor="mobile">
+                                                {{ 'app.page.activate-account.label.mobile' | translate }}
+                                            </nz-form-label>
+                                            <nz-form-control
+                                                    nzErrorTip="{{ 'app.page.activate-account.label.mobile-hint' | translate }}">
+                                                <input type="text" nz-input [(ngModel)]="verifySignup.adminMobileNumber"
+                                                       disabled="true"
+                                                       placeholder="{{ 'app.page.activate-account.label.mobile' | translate }}"
+                                                       id="mobile">
+                                            </nz-form-control>
+                                        </nz-form-item>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <nz-form-item>
+                                            <nz-form-label nzRequired nzFor="email">
+                                                {{ 'app.page.activate-account.label.email' | translate }}
+                                            </nz-form-label>
+                                            <nz-form-control
+                                                    nzErrorTip="{{ 'app.page.activate-account.label.email-hint' | translate }}">
+                                                <input type="email" nz-input [(ngModel)]="verifySignup.adminEmail"
+                                                       disabled="true"
+                                                       placeholder="{{ 'app.page.activate-account.label.email' | translate }}"
+                                                       id="email">
+                                            </nz-form-control>
+                                        </nz-form-item>
+                                    </td>
+                                    <td *ngIf="verifySignup.otpRequired">
+                                        <nz-form-item>
+                                            <nz-form-label nzRequired nzFor="otp">
+                                                {{ 'app.page.activate-account.label.otp' | translate }}
+                                            </nz-form-label>
+                                            <nz-form-control
+                                                    nzErrorTip="{{ 'app.page.activate-account.label.otp-hint' | translate }}">
+                                                <input type="text" nz-input [(ngModel)]="verifySignup.otp"
+                                                       placeholder="{{ 'app.page.activate-account.label.otp' | translate }}"
+                                                       id="otp">
+                                            </nz-form-control>
+                                        </nz-form-item>
+                                    </td>
+                                </tr>
+                            </nz-table>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <nz-form-item>
+                                    <nz-form-control>
+                                        <label>
+                                            <span>{{ 'app.page.sign-up.login-link-1' | translate }}
+                                                <a (click)="redirectLoginPage()">
+                                                    {{ 'app.page.sign-up.login-link-2' | translate }}
+                                                </a>
+                                            </span>
+                                        </label>
+                                    </nz-form-control>
+                                </nz-form-item>
+                                <nz-form-item>
+                                    <nz-form-control>
+                                        <div>
+                                            <button nz-button class="login-form-button"
+                                                    (click)="validateOTP()"
+                                                    [nzType]="'primary'">
+                                                {{ 'app.general.button.validate' | translate }}
+                                            </button>
+                                        </div>
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-lg-8 col-xl-8 mx-auto" *ngIf="!isValidForm">
+                        <h2>{{ 'app.page.activate-account.failure' | translate }}</h2>
+                        <p class="m-b-30">{{ 'app.page.activate-account.failure-hint' | translate }}</p>
+                        <a (click)="redirectLoginPage()">
+                            {{ 'app.page.login.login-link-2' | translate }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

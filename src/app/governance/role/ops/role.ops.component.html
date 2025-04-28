@@ -1,0 +1,43 @@
+<form nz-form [formGroup]="crudForm" (ngSubmit)="customCreateOrUpdate()">
+    <app-form-general [parentForm]="crudForm" [pageName]="pageName" [crudOps]="crudOps"
+                      [object]="object"></app-form-general>
+    <div nz-row>
+        <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="12" [nzXXl]="12">
+            <app-form-select-one formControlName="organizationId" controlName="organizationId"
+                                 [controlOptions]="organizationIdNameMap"
+                                 [pageName]="pageName" [crudOps]="crudOps"/>
+        </div>
+        <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="12" [nzXXl]="12">
+            <app-form-select-many formControlName="selectedPermissionIds" controlName="selectedPermissionIds"
+                                  [controlOptions]="permissionIdNameMap"
+                                  [pageName]="pageName" [crudOps]="crudOps"/>
+        </div>
+    </div>
+    <div nz-row>
+        <div nz-col [nzXs]="24" [nzSm]="24" [nzMd]="8" [nzLg]="8" [nzXl]="8" [nzXXl]="8">
+            <nz-form-label
+                    [nzRequired]="true">{{ appCtrlService.getControlText(pageName, 'menuIds') }}
+            </nz-form-label>
+        </div>
+        <div *ngIf="crudOps !== permissions.view" nz-col [nzXs]="24" [nzSm]="24" [nzMd]="16" [nzLg]="16" [nzXl]="16"
+             [nzXXl]="12">
+            <nz-tree
+                    [nzData]="menuTree"
+                    nzCheckable
+                    [nzExpandAll]=true
+                    [nzCheckedKeys]="checkedKeys"
+                    (nzCheckboxChange)="nzEvent($event)"
+            ></nz-tree>
+        </div>
+        <div *ngIf="crudOps === permissions.view" nz-col [nzXs]="24" [nzSm]="24" [nzMd]="16" [nzLg]="16" [nzXl]="16"
+             [nzXXl]="12">
+            <ng-container *ngFor="let obj of object?.selectedMenuIds">
+                <span>{{ obj }}</span>
+                &nbsp;
+            </ng-container>
+        </div>
+    </div>
+
+    <app-form-audit [object]="object" [crudOps]="crudOps"></app-form-audit>
+    <app-form-submit-buttons [crudOps]="crudOps" [crudForm]="crudForm"></app-form-submit-buttons>
+</form>

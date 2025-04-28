@@ -1,0 +1,40 @@
+<ng-container *ngIf="control?.errors?.required">
+    {{ 'app.message.failure.001' | translate }}
+</ng-container>
+<ng-container *ngIf="control?.errors?.minlength">
+    {{ 'app.message.failure.003' | translate }}
+</ng-container>
+<ng-container *ngIf="control?.errors?.maxlength">
+    {{ 'app.message.failure.003' | translate }}
+</ng-container>
+<ng-container *ngIf="control?.errors?.pattern">
+    {{ 'app.message.failure.004' | translate }}
+</ng-container>
+<ng-container *ngIf="control?.errors?.normalEmailRule">
+    {{ 'app.message.failure.006' | translate }}
+</ng-container>
+<ng-container *ngIf="control?.errors?.alphabeticalCharacterRule">
+    {{ 'app.message.failure.007' | translate }}
+</ng-container>
+<ng-container *ngIf="control?.errors?.mismatchedPasswords">
+    {{ 'app.message.failure.008' | translate }}
+</ng-container>
+<ng-container *ngIf="control?.errors?.uppercaseCharacterRule">
+    {{ 'app.message.failure.010' | translate }}
+</ng-container>
+<ng-container *ngIf="control?.errors?.lowercaseCharacterRule">
+    {{ 'app.message.failure.011' | translate }}
+</ng-container>
+<ng-container *ngIf="control?.errors?.numberRequired">
+    {{ 'app.message.failure.012' | translate }}
+</ng-container>
+<ng-container *ngIf="control?.errors?.digitCharacterRule">
+    {{ 'app.message.failure.012' | translate }}
+</ng-container>
+<ng-container *ngIf="control?.errors?.specialCharacterRule">
+    {{ 'app.message.failure.013' | translate }}
+</ng-container>
+<ng-container *ngIf="control?.errors?.allowedCharacterRule">
+    {{ 'app.message.failure.013' | translate }}
+</ng-container>
+

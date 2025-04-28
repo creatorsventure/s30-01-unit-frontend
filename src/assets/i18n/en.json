@@ -1,0 +1,372 @@
+{
+  "app": {
+    "name": "Unit",
+    "author": "Ramakrishna R",
+    "description": "This is an Unit Management application.",
+    "privacy": "privacy",
+    "rights": "All rights reserved",
+    "version": "V 1.0",
+    "year": "2025",
+    "general": {
+      "button": {
+        "all": "All",
+        "add": "Add",
+        "edit": "Edit",
+        "view": "View",
+        "submit": "Submit",
+        "reset": "Reset",
+        "delete": "Delete",
+        "yes": "Yes",
+        "no": "No",
+        "back": "Back",
+        "resend-password-email": "Resend Password Email",
+        "sign-up-email": "Send Sign Up Email",
+        "validate": "Validate",
+        "send-otp": "Send OTP"
+      },
+      "page": {
+        "id": "Id",
+        "name": "Name",
+        "description": "Description",
+        "status": "Status"
+      },
+      "pagination": {
+        "noData": "No data found",
+        "options": "Options",
+        "searchField": "Search field",
+        "searchValue": "Search value",
+        "select": "Select",
+        "id": "Id",
+        "name": "Name",
+        "description": "Description",
+        "status": "Status"
+      },
+      "tooltip": {
+        "general": "Field: {{controlName}} -> Min Length: {{minLength}}, Max Length: {{maxLength}}, Allowed: {{pattern}}",
+        "no-length": "Field: {{controlName}} -> Allowed: {{pattern}}"
+      },
+      "status": {
+        "active": "Active",
+        "inactive": "Inactive"
+      },
+      "popup": {
+        "deletePopUp": "Are you sure to delete?",
+        "statusPopUp": "Are you sure to change status?",
+        "sign-out-popup": "Are you sure to sign out?"
+      },
+      "audit": {
+        "createdAt": "Created At",
+        "createdBy": "Created By",
+        "modifiedAt": "Modified At",
+        "modifiedBy": "Modified By"
+      }
+    },
+    "page": {
+      "sign-up": {
+        "content-1": "Unit Management",
+        "content-2": "Unit Management enables administrators to configure bin, manage merchant, Devices, users, and transactions—centralizing control and customization for operational and transactional workflows.",
+        "sign-up": "Signup",
+        "sign-up-page-hint": "Create your account to get access",
+        "sign-up-hint": "Don't have an account?",
+        "signup-success-title": "Operation completed successfully",
+        "signup-success-hint": "We have sent an email with login details. Please login to continue.",
+        "signup-failure-title": "Operation failed",
+        "signup-failure-title-hint": "Please contact administrator.",
+        "login-link-1": "Already have password",
+        "login-link-2": "login here!",
+        "user-exists-title": "User already created!",
+        "user-exists-hint": "User already exists, Please login",
+        "label": {
+          "entityName": "Unit Name",
+          "entityName-hint": "Please input your unit Name!",
+          "entityCode": "Unit Code",
+          "entityCode-hint": "Please input your unit Code!",
+          "name": "Name",
+          "name-hint": "Please input your name!",
+          "userId": "User Id",
+          "userId-hint": "Please input your user id!",
+          "email": "Email",
+          "email-hint": "Please provide email!",
+          "mobileNumber": "Mobile Number",
+          "mobileNumber-eg": "1234567890",
+          "mobileNumber-hint": "Please provide phone number!",
+          "password": "Password",
+          "confirmPassword": "Confirm",
+          "confirmPassword-hint": "Please confirm your password!"
+        }
+      },
+      "login": {
+        "content-1": "Unit Management",
+        "content-2": "Unit Management enables administrators to configure bin, manage merchant, Devices, users, and transactions—centralizing control and customization for operational and transactional workflows.",
+        "sign-up": "Signup",
+        "sign-up-hint": "Don't have an account?",
+        "sign-in": "Sign In",
+        "sign-in-desc": "Enter your credential to get access",
+        "success-title": "Operation completed successfully",
+        "failure-title": "Operation failed",
+        "success-hint": "We have sent an email with login details. Please login to continue.",
+        "username": "user id",
+        "username-hint": "Please input your username!",
+        "password": "Password",
+        "password-hint": "Please input your Password!",
+        "forgot-password": "Forget Password?",
+        "login-link-2": "login here!"
+      },
+      "activate-account": {
+        "sign-up": "Signup",
+        "sign-up-hint": "Create your account to get access",
+        "success": "Account activation success!",
+        "success-hint": "Please login to continue.",
+        "failure": "Account activation failed or taking some time!",
+        "failure-hint": "Please contact support.",
+        "label": {
+          "payload": "Payload",
+          "name": "Name",
+          "name-hint": "Please provide name!",
+          "id": "Id",
+          "id-hint": "Please provide id!",
+          "email": "Email",
+          "email-hint": "Please provide email!",
+          "country-code": "Country Code",
+          "country-code-hint": "Please provide Country Code!",
+          "mobile": "Mobile Number",
+          "mobile-hint": "Please provide mobile!",
+          "otp": "OTP",
+          "otp-hint": "Please provide OTP!"
+        }
+      },
+      "reset-password": {
+        "reset": "Reset",
+        "reset-password": "Reset Password",
+        "reset-password-hint": "Please reset your credentials here.",
+        "reset-hint-1": "Confirm to initiate reset email",
+        "reset-hint-2": "Please click ok to initiate the password reset email.",
+        "success-hint": "Please login to continue."
+      },
+      "quick-view": {
+        "title": "Quick View",
+        "sign-out": "logout"
+      },
+      "error": {
+        "title": "!#$",
+        "hint-1": "Whoops! Problem occurred",
+        "hint-2": "Please try again later."
+      },
+      "info": {
+        "title": "Problem occurred. Please try again later!",
+        "hint-1": "Unfortunately the site is down for a bit of maintenance right now. But we're doing our best to get things back."
+      },
+      "dashboard": {
+        "name": "Dashboard",
+        "hint-1": "Welcome back, ",
+        "hint-2": "You're all set! Here's some info.",
+        "date": "Today:",
+        "time": "Time:",
+        "status": "Status: Ok"
+      },
+      "governance": {
+        "name": "Governance"
+      },
+      "organization": {
+        "name": "Organization",
+        "description": "Organization can be created here!",
+        "label": {
+          "organizationCode": "Code"
+        }
+      },
+      "permission": {
+        "name": "Permission",
+        "description": "Permission can be created here!",
+        "label": {
+          "permissionCode": "Code"
+        }
+      },
+      "menu": {
+        "name": "Menu",
+        "description": "Menu can be created here!",
+        "label": {
+          "path": "Path",
+          "icon": "Icon",
+          "iconType": "Icon Type",
+          "iconTheme": "Icon Theme",
+          "rootMenuId": "Root Menu Id",
+          "displayPosition": "Display Position",
+          "menuType": "Menu Type",
+          "moduleId": "Module",
+          "dashboardCountCard": "Count Card"
+        }
+      },
+      "role": {
+        "name": "Role",
+        "description": "Role can be created here!",
+        "label": {
+          "organizationId": "Organization",
+          "selectedPermissionIds": "Permission",
+          "menuIds": "Menu Details"
+        }
+      },
+      "user": {
+        "name": "User",
+        "description": "User can be created here!",
+        "label": {
+          "userId": "User Id",
+          "mobileNumber": "Mobile Number",
+          "email": "Email",
+          "roleId": "Role"
+        }
+      },
+      "password": {
+        "name": "Password",
+        "description": "Password can be created here!",
+        "label": {
+          "name": "Name",
+          "password": "Password",
+          "confirmPassword": "Confirm password",
+          "userDetailId": "User id"
+        }
+      },
+      "configuration": {
+        "name": "Configuration"
+      },
+      "scheme": {
+        "name": "Scheme",
+        "description": "Scheme can be created here!",
+        "label": {
+          "code": "Code"
+        }
+      },
+      "merchant-category": {
+        "name": "Merchant Category",
+        "description": "Merchant category can be created here!",
+        "label": {
+          "code": "Code"
+        }
+      },
+      "engine": {
+        "name": "Engine",
+        "description": "Engine can be created here!",
+        "label": {
+          "type": "Type",
+          "serviceURL": "URL",
+          "timeout": "Timeout",
+          "priority": "Priority"
+        }
+      },
+      "options": {
+        "name": "Options",
+        "description": "Options can be created here!",
+        "label": {
+          "captcha": "Captcha",
+          "transactionOTP": "Transaction OTP",
+          "loginOTP": "Login OTP",
+          "tokenization": "Tokenization",
+          "cvvSecurity": "CVV",
+          "makerCheckerMode": "Maker/Checker",
+          "masking": "Masking"
+        }
+      },
+      "currency": {
+        "name": "Currency",
+        "description": "Currency can be created here!",
+        "label": {
+          "code": "Code",
+          "symbol": "Symbol",
+          "decimalPlaces": "Decimals"
+        }
+      },
+      "action": {
+        "name": "Action",
+        "description": "Action can be created here!",
+        "label": {
+          "actionCode": "Code",
+          "actionId": "Identifier",
+          "partial": "Partial",
+          "permitExcess": "Excess amount"
+        }
+      },
+      "unit": {
+        "name": "Unit",
+        "description": "Unit can be created here!",
+        "label": {
+          "unitCode": "Code",
+          "unitId": "Id",
+          "legalName": "Legal Name",
+          "address": "Address",
+          "bankIdentificationCode": "BIC",
+          "adminName": "Admin Name",
+          "adminEmail": "Admin Email",
+          "type": "Type",
+          "selectedActionIds": "Action",
+          "selectedCurrencyIds": "Currency",
+          "selectedEngineIds": "Engine",
+          "selectedOptionsId": "Options"
+        }
+      }
+    },
+    "regxPatterns": {
+      "input": "Upper case, Lower case, Numeric, Underscore, Space",
+      "inputSpecial": "Upper case, Lower case, Numeric, Underscore, Comma, Slash, Hyphen, Dot",
+      "numeric": "Numeric",
+      "password": "Upper case, Lower case, Numeric, @ $ #",
+      "select-one": "Select Options",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "url": "URL"
+    },
+    "message": {
+      "generic": {
+        "error": "Error",
+        "info": "Information",
+        "refer-console": "Refer developer console in the browser for exception details.",
+        "success": "Success",
+        "warning": "Warning"
+      },
+      "glossary": {
+        "tittle": "This is only to comment and classify the error code. Dont use in application",
+        "000-999": "core and front-end only errors",
+        "1000-1999": "error from the org service"
+      },
+      "success": {
+        "000": "Operation completed successfully."
+      },
+      "failure": {
+        "COMMENT-01": "front-end only errors - start",
+        "f001": "Please provide the search inputs",
+        "f002": "Please select menu details.",
+        "f003": "Request tampered.",
+        "f004": "Invalid OTP.",
+        "f005": "Invalid signup data.",
+        "COMMENT-02": "front-end only errors - start",
+        "COMMENT-03": "core and front-end only errors - start",
+        "000": "Problem occurred. Please try again later.",
+        "001": "Field should not be blank.",
+        "002": "Field should not be empty.",
+        "003": "Field required minimum/maximum length of input.",
+        "004": "Input is not valid.",
+        "005": "Invalid phone number",
+        "006": "Invalid email address",
+        "007": "Invalid password",
+        "008": "Password not matched.",
+        "009": "Invalid password length (greater than 8 and less than 16).",
+        "010": "Password should have one uppercase",
+        "011": "Password should have one lowercase",
+        "012": "Field should have one number",
+        "013": "Password should have one special character",
+        "014": "Password should not have space",
+        "015": "Requested Data Not available or Inactive.",
+        "016": "User already exists.",
+        "017": "Invalid credentials.",
+        "018": "Token/Refresh token expired.",
+        "019": "New password and Old password are same.",
+        "020": "User already activated.",
+        "021": "Emailed link expired.",
+        "022": "Please enter the user id",
+        "023": "DB error occurred, Possible duplicate. Check the logs. ",
+        "024": "Invalid URL.",
+        "COMMENT-04": "core and front-end only errors - end",
+        "COMMENT-05": "Org service errors - start",
+        "COMMENT-06": "Org service errors - end"
+      }
+    }
+  }
+}

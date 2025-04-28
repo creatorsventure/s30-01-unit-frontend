@@ -1,0 +1,22 @@
+<nz-divider></nz-divider>
+<nz-space>
+    <ng-template [ngIf]="crudOps !== permissions.view">
+        <button *nzSpaceItem nz-button nzType="primary" nzSize="small">
+            <i nz-icon nzType="check-circle"></i>
+            {{ 'app.general.button.submit' | translate }}
+        </button>
+        <button *nzSpaceItem nz-button nzType="default" nzDanger nzSize="small"
+                (click)="reset()">
+            <i nz-icon nzType="close-circle"></i>
+            {{ 'app.general.button.reset' | translate }}
+        </button>
+    </ng-template>
+    <ng-template [ngIf]="backButtonDisplay">
+        <button *nzSpaceItem nz-button nzType="primary" nzSize="small" nzGhost
+                (click)="redirectToListPage()">
+            <i nz-icon nzType="left-circle"></i>
+            {{ 'app.general.button.back' | translate }}
+        </button>
+    </ng-template>
+</nz-space>
+

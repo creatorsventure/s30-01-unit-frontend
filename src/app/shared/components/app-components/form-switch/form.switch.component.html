@@ -1,0 +1,27 @@
+<nz-form-item class="form-field-row">
+    <nz-form-label class="form-field-label" [nzRequired]="isRequired">
+        {{ appCtrlService.getControlText(pageName, controlName) }}
+    </nz-form-label>
+    <nz-form-control class="form-field-control" *ngIf="crudOps != permissions.view"
+                     [nzValidateStatus]="control"
+                     [nzHasFeedback]="control?.invalid && control?.dirty"
+                     [nzErrorTip]="errorTemplate">
+        <nz-switch [formControl]="control" [disabled]="isDisabled" [required]="isRequired"
+                   nz-tooltip
+                   [nzCheckedChildren]="checkedTemplate"
+                   [nzUnCheckedChildren]="unCheckedTemplate"
+                   [nzTooltipTitle]="appCtrlService.generateToolTip(controlDesc, pageName, controlName) || ''"/>
+    </nz-form-control>
+    <ng-template #checkedTemplate>
+        <nz-icon nzType="check"/>
+    </ng-template>
+    <ng-template #unCheckedTemplate>
+        <nz-icon nzType="close"/>
+    </ng-template>
+    <ng-template #errorTemplate>
+        <app-field-errors [control]="control" [controlName]="controlName"></app-field-errors>
+    </ng-template>
+    <nz-form-control class="form-field-control" *ngIf="crudOps == permissions.view">
+        <span>{{ control.value }}</span>
+    </nz-form-control>
+</nz-form-item>

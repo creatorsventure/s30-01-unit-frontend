@@ -1,0 +1,190 @@
+<div class="container-fluid p-0 h-100">
+    <div class="row no-gutters h-100">
+        <div class="col-lg-4 d-none d-lg-flex" style="background-image:url('assets/images/others/sign-up-1.jpg')">
+            <div class="d-flex h-100 p-h-40 p-v-15 flex-column justify-content-between">
+                <div>
+                    <img src="assets/images/logo/logo-white.png" alt="">
+                </div>
+                <div>
+                    <h1 class="text-white m-b-20 font-weight-normal">{{ 'app.page.sign-up.content-1' | translate }}</h1>
+                    <p class="text-white font-size-16 opacity-08 text-justify">
+                        {{ 'app.page.sign-up.content-2' | translate }}
+                    </p>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <span class="text-white">© {{ 'app.rights' | translate }}</span>
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a class="text-white text-link" href="">{{ 'app.year' | translate }}</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="text-white text-link" href="">{{ 'app.version' | translate }}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8 bg-white">
+            <div class="container h-100">
+                <div class="row no-gutters h-100 align-items-center">
+                    <div class="col-md-8 col-lg-8 col-xl-8 mx-auto" *ngIf="isSignup">
+                        <h2>{{ 'app.page.sign-up.sign-up' | translate }}</h2>
+                        <p class="m-b-30">{{ 'app.page.sign-up.sign-up-page-hint' | translate }}</p>
+                        <form nz-form [formGroup]="signUpForm" class="login-form" nzLayout="vertical"
+                              (ngSubmit)="submitForm()">
+                            <nz-table #basicTable>
+                                <tr>
+                                    <td>
+                                        <nz-form-item>
+                                            <nz-form-label nzRequired nzFor="entityName">
+                                                {{ 'app.page.sign-up.label.entityName' | translate }}
+                                            </nz-form-label>
+                                            <nz-form-control
+                                                    nzErrorTip="{{ 'app.page.sign-up.label.entityName-hint' | translate }}">
+                                                <input type="text" nz-input formControlName="entityName"
+                                                       [disabled]="true"
+                                                       placeholder="{{ 'app.page.sign-up.label.entityName' | translate }}"
+                                                       id="entityName">
+                                            </nz-form-control>
+                                        </nz-form-item>
+                                    </td>
+                                    <td>
+                                        <nz-form-item>
+                                            <nz-form-label nzRequired nzFor="entityCode">
+                                                {{ 'app.page.sign-up.label.entityCode' | translate }}
+                                            </nz-form-label>
+                                            <nz-form-control
+                                                    nzErrorTip="{{ 'app.page.sign-up.label.entityCode-hint' | translate }}">
+                                                <input type="text" nz-input formControlName="entityCode"
+                                                       [disabled]="true"
+                                                       placeholder="{{ 'app.page.sign-up.label.entityCode' | translate }}"
+                                                       id="entityCode">
+                                            </nz-form-control>
+                                        </nz-form-item>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <nz-form-item>
+                                            <nz-form-label nzRequired nzFor="name">
+                                                {{ 'app.page.sign-up.label.name' | translate }}
+                                            </nz-form-label>
+                                            <nz-form-control
+                                                    nzErrorTip="{{ 'app.page.sign-up.label.name-hint' | translate }}">
+                                                <input type="text" nz-input formControlName="name"
+                                                       [disabled]="true"
+                                                       placeholder="{{ 'app.page.sign-up.label.name' | translate }}"
+                                                       id="name">
+                                            </nz-form-control>
+                                        </nz-form-item>
+                                    </td>
+                                    <td>
+                                        <nz-form-item>
+                                            <nz-form-label nzRequired nzFor="userId">
+                                                {{ 'app.page.sign-up.label.userId' | translate }}
+                                            </nz-form-label>
+                                            <nz-form-control
+                                                    nzErrorTip="{{ 'app.page.sign-up.label.userId-hint' | translate }}">
+                                                <input type="text" nz-input formControlName="userId"
+                                                       [disabled]="true"
+                                                       placeholder="{{ 'app.page.sign-up.label.userId' | translate }}"
+                                                       id="userId">
+                                            </nz-form-control>
+                                        </nz-form-item>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <nz-form-item>
+                                            <nz-form-label nzRequired nzFor="email">
+                                                {{ 'app.page.sign-up.label.email' | translate }}
+                                            </nz-form-label>
+                                            <nz-form-control
+                                                    nzErrorTip="{{ 'app.page.sign-up.label.email-hint' | translate }}">
+                                                <input type="email" nz-input formControlName="email"
+                                                       [disabled]="true"
+                                                       placeholder="{{ 'app.page.sign-up.label.email' | translate }}"
+                                                       id="email">
+                                            </nz-form-control>
+                                        </nz-form-item>
+                                    </td>
+                                    <td>
+                                        <nz-form-item>
+                                            <nz-form-label nzRequired nzFor="mobileNumber">
+                                                {{ 'app.page.sign-up.label.mobileNumber' | translate }}
+                                            </nz-form-label>
+                                            <nz-form-control
+                                                    nzErrorTip="{{ 'app.page.sign-up.label.mobileNumber-hint' | translate }}">
+                                                <input type="text" nz-input formControlName="mobileNumber"
+                                                       [disabled]="true"
+                                                       placeholder="{{ 'app.page.sign-up.label.mobileNumber' | translate }}"
+                                                       id="mobileNumber">
+                                            </nz-form-control>
+                                        </nz-form-item>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <nz-form-item>
+                                            <nz-form-label nzRequired nzFor="password">
+                                                {{ 'app.page.sign-up.label.password' | translate }}
+                                            </nz-form-label>
+                                            <nz-form-control
+                                                    nzErrorTip=" {{ 'app.page.sign-up.label.password-hint' | translate }}">
+                                                <input type="password" nz-input formControlName="password"
+                                                       placeholder=" {{ 'app.page.sign-up.label.password' | translate }}"
+                                                       id="password">
+                                            </nz-form-control>
+                                        </nz-form-item>
+                                    </td>
+                                    <td>
+                                        <nz-form-item>
+                                            <nz-form-label nzFor="confirmPassword" nzRequired>
+                                                {{ 'app.page.sign-up.label.confirmPassword' | translate }}
+                                            </nz-form-label>
+                                            <nz-form-control
+                                                    nzErrorTip="{{ 'app.page.sign-up.label.confirmPassword-hint' | translate }}">
+                                                <input nz-input type="password" formControlName="confirmPassword"
+                                                       placeholder="{{ 'app.page.sign-up.label.confirmPassword' | translate }}"
+                                                       id="confirmPassword">
+                                            </nz-form-control>
+                                        </nz-form-item>
+                                    </td>
+                                </tr>
+                            </nz-table>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <nz-form-item>
+                                    <nz-form-control>
+                                        <label>
+                                            <span>{{ 'app.page.sign-up.login-link-1' | translate }}
+                                                <a (click)="redirectLoginPage()">
+                                                    {{ 'app.page.sign-up.login-link-2' | translate }}
+                                                </a>
+                                            </span>
+                                        </label>
+                                    </nz-form-control>
+                                </nz-form-item>
+                                <nz-form-item>
+                                    <nz-form-control>
+                                        <div>
+                                            <button nz-button class="login-form-button" [nzType]="'primary'">
+                                                {{ 'app.page.sign-up.sign-up' | translate }}
+                                            </button>
+                                        </div>
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-8 col-lg-8 col-xl-8 mx-auto" *ngIf="!isSignup">
+                        <h2>{{ 'app.page.sign-up.signup-failure-title' | translate }}</h2>
+                        <p class="m-b-30">{{ 'app.page.sign-up.signup-failure-title-hint' | translate }}</p>
+                        <a (click)="redirectLoginPage()">
+                            {{ 'app.page.sign-up.login-link-2' | translate }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
