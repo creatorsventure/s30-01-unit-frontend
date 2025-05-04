@@ -6,7 +6,7 @@ import {StorageService} from '../services/storage.service';
 import {API_METHOD, APP_NAVIGATION, LOCAL_STORAGE_KEYS} from '../routes/navigation.constant';
 import {AuthService} from '../services/auth.service';
 import {Router} from '@angular/router';
-import {IAuthInfo} from '../../authentication/login-1/auth-info.model';
+import {IAuthInfo} from '../../authentication/login-2/auth-info.model';
 
 @Injectable({
     providedIn: 'root'
@@ -48,9 +48,7 @@ export class JwtInterceptor implements HttpInterceptor {
     private addHeaders(request: HttpRequest<any>, authInfo: IAuthInfo): HttpRequest<any> {
         return request.clone({
             setHeaders: {
-                Authorization: authInfo?.token ? `Bearer ${authInfo.token}` : '',
-                'X-UNIT-ID': authInfo?.unitId ? authInfo.unitId : '',
-                'X-MERCHANT-ID': authInfo?.merchantId ? authInfo.merchantId : ''
+                Authorization: authInfo?.token ? `Bearer ${authInfo.token}` : ''
             }
         });
     }

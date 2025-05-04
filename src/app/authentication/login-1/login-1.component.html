@@ -28,8 +28,17 @@
                     <div class="col-md-8 col-lg-7 col-xl-6 mx-auto">
                         <h2>{{ 'app.page.login.sign-in' | translate }}</h2>
                         <p class="m-b-30">{{ 'app.page.login.sign-in-desc' | translate }}</p>
-                        <form nz-form [formGroup]="loginForm" nzLayout="vertical" class="login-form"
-                              (ngSubmit)="submitForm()">
+                        <form nz-form [formGroup]="loginForm" nzLayout="vertical" class="login-form">
+                            <nz-form-item>
+                                <nz-form-label nzRequired nzFor="unitCode">{{ 'app.page.login.unitCode' | translate }}
+                                </nz-form-label>
+                                <nz-form-control nzErrorTip="{{ 'app.page.login.unitCode-hint' | translate }}">
+                                    <nz-input-group [nzPrefix]="prefixBank">
+                                        <input type="text" nz-input formControlName="unitCode"
+                                               placeholder="{{ 'app.page.login.unitCode' | translate }}">
+                                    </nz-input-group>
+                                </nz-form-control>
+                            </nz-form-item>
                             <nz-form-item>
                                 <nz-form-label nzRequired nzFor="userId">{{ 'app.page.login.username' | translate }}
                                 </nz-form-label>
@@ -67,6 +76,7 @@
                                 </nz-form-control>
                             </nz-form-item>
                         </form>
+                        <ng-template #prefixBank><i nz-icon nzType="bank"></i></ng-template>
                         <ng-template #prefixUser><i nz-icon nzType="user"></i></ng-template>
                         <ng-template #prefixLock><i nz-icon nzType="lock"></i></ng-template>
                     </div>

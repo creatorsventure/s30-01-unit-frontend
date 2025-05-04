@@ -7,6 +7,7 @@ import {API_METHOD, APP_NAVIGATION} from '../routes/navigation.constant';
 import {IPagination} from '../interfaces/Pagination.type';
 import {ParamType} from '../interfaces/Param.type';
 import {Router} from '@angular/router';
+import {constructHeaders, constructParams} from '../utils/utils';
 
 @Injectable({providedIn: 'root'})
 export class CRUDService {
@@ -16,9 +17,10 @@ export class CRUDService {
         this.endPoint = environment.primaryBackendUrl;
     }
 
-    public post(pageName: string, dto: any, isReturnData: boolean = false): Observable<boolean> {
+    public post(pageName: string, dto: any, isReturnData: boolean = false, inputHeaders?: ParamType[]): Observable<boolean> {
+        const headers = constructHeaders(inputHeaders);
         return this.http
-            .post<IAPIResponse>(this.endPoint + pageName, dto)
+            .post<IAPIResponse>(this.endPoint + pageName, dto, {headers})
             .pipe(
                 map((apiResponse) => {
                     if (
@@ -40,9 +42,10 @@ export class CRUDService {
             );
     }
 
-    public put(pageName: string, dto: any, isReturnData: boolean = false): Observable<boolean> {
+    public put(pageName: string, dto: any, isReturnData: boolean = false, inputHeaders?: ParamType[]): Observable<boolean> {
+        const headers = constructHeaders(inputHeaders);
         return this.http
-            .put<IAPIResponse>(this.endPoint + pageName, dto)
+            .put<IAPIResponse>(this.endPoint + pageName, dto, {headers})
             .pipe(
                 map((apiResponse) => {
                     if (
@@ -176,17 +179,14 @@ export class CRUDService {
 
     public getData(
         urlSuffix: string,
-        inputParams?: ParamType[]
+        inputParams?: ParamType[],
+        inputHeaders?: ParamType[]
     ): Observable<any> {
-        let params: HttpParams = new HttpParams();
-        if (inputParams) {
-            for (const param of inputParams) {
-                params = params.append(param.key, param.value);
-            }
-        }
+        const headers = constructHeaders(inputHeaders);
+        const params = constructParams(inputParams);
         return this.http
             .get<IAPIResponse>(this.endPoint + urlSuffix, {
-                params,
+                params, headers
             })
             .pipe(
                 map((apiResponse) => {
@@ -205,4 +205,5 @@ export class CRUDService {
                 })
             );
     }
+
 }

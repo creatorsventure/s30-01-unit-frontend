@@ -28,7 +28,12 @@ export const APP_NAVIGATION = {
     engine: 'engine',
     options: 'options',
     merchantCategory: 'merchant-category',
-    unit: 'unit'
+    unit: 'unit',
+    bin: 'bin',
+    device: 'device',
+    merchant: 'merchant',
+    unitKey: 'unit-key',
+    unitOptions: 'unit-options',
 };
 
 export const API_METHOD = {

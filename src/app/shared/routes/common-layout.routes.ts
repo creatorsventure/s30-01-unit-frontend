@@ -62,4 +62,54 @@ export const COMMON_LAYOUT_ROUTES: Routes = [
         },
         canActivate: [AuthGuard]
     },
+    {
+        path: APP_NAVIGATION.configuration + '/' + APP_NAVIGATION.bin,
+        loadChildren: () =>
+            import('../../configuration/bin/bin.module').then((m) => m.BinModule),
+        data: {
+            parent: APP_NAVIGATION.configuration,
+            title: 'app.page.' + APP_NAVIGATION.configuration + '.name',
+        },
+        canActivate: [AuthGuard]
+    },
+    {
+        path: APP_NAVIGATION.configuration + '/' + APP_NAVIGATION.unitOptions,
+        loadChildren: () =>
+            import('../../configuration/unit-options/unit-options.module').then((m) => m.UnitOptionsModule),
+        data: {
+            parent: APP_NAVIGATION.configuration,
+            title: 'app.page.' + APP_NAVIGATION.configuration + '.name',
+        },
+        canActivate: [AuthGuard]
+    },
+    {
+        path: APP_NAVIGATION.configuration + '/' + APP_NAVIGATION.unitKey,
+        loadChildren: () =>
+            import('../../configuration/unit-key/unit-key.module').then((m) => m.UnitKeyModule),
+        data: {
+            parent: APP_NAVIGATION.configuration,
+            title: 'app.page.' + APP_NAVIGATION.configuration + '.name',
+        },
+        canActivate: [AuthGuard]
+    },
+    {
+        path: APP_NAVIGATION.configuration + '/' + APP_NAVIGATION.merchant,
+        loadChildren: () =>
+            import('../../configuration/merchant/merchant.module').then((m) => m.MerchantModule),
+        data: {
+            parent: APP_NAVIGATION.configuration,
+            title: 'app.page.' + APP_NAVIGATION.configuration + '.name',
+        },
+        canActivate: [AuthGuard]
+    },
+    {
+        path: APP_NAVIGATION.configuration + '/' + APP_NAVIGATION.device,
+        loadChildren: () =>
+            import('../../configuration/device/device.module').then((m) => m.DeviceModule),
+        data: {
+            parent: APP_NAVIGATION.configuration,
+            title: 'app.page.' + APP_NAVIGATION.configuration + '.name',
+        },
+        canActivate: [AuthGuard]
+    },
 ];

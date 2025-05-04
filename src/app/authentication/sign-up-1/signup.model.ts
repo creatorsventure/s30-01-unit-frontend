@@ -2,6 +2,7 @@ import {GenericModelType} from '../../shared/interfaces/Generic.model.type';
 
 export interface ISignup extends GenericModelType {
     userId: string;
+    entityId?: string;
     entityCode: string;
     entityName: string;
     password: string;

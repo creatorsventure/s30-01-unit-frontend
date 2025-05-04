@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {CryptoService} from './crypto.service';
 import {LOCAL_STORAGE_KEYS} from '../routes/navigation.constant';
-import {IAuthInfo} from '../../authentication/login-1/auth-info.model';
+import {IAuthInfo} from '../../authentication/login-2/auth-info.model';
 
 @Injectable({providedIn: 'root'})
 export class StorageService {

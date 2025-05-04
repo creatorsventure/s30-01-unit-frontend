@@ -1,5 +1,6 @@
 import {FormControl, FormGroup, ValidationErrors} from '@angular/forms';
-import {AlertService} from '../services/alert.service';
+import {ParamType} from '../interfaces/Param.type';
+import {HttpHeaders, HttpParams} from '@angular/common/http';
 
 export function updateFormDirtyAndValueAndValidity(formGroup: FormGroup): void {
     Object.keys(formGroup.controls).forEach((key) => {
@@ -47,4 +48,24 @@ export function logAllErrorsInFormControl(
             );
         });
     }
+}
+
+export function constructHeaders(inputHeaders: ParamType[]): HttpHeaders {
+    let headers: HttpHeaders = new HttpHeaders();
+    if (inputHeaders) {
+        for (const header of inputHeaders) {
+            headers = headers.append(header.key, header.value);
+        }
+    }
+    return headers;
+}
+
+export function constructParams(inputParams: ParamType[]): HttpParams {
+    let params: HttpParams = new HttpParams();
+    if (inputParams) {
+        for (const header of inputParams) {
+            params = params.append(header.key, header.value);
+        }
+    }
+    return params;
 }

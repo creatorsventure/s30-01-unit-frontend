@@ -9,7 +9,7 @@ import {LOCAL_STORAGE_KEYS} from '../../../shared/routes/navigation.constant';
 import {CONTROL_DESCRIPTION} from '../../../shared/constant/control.constant';
 import {IPassword} from '../model/password.model.component';
 import {StorageService} from '../../../shared/services/storage.service';
-import {IAuthInfo} from '../../../authentication/login-1/auth-info.model';
+import {IAuthInfo} from '../../../authentication/login-2/auth-info.model';
 
 @Component({selector: 'app-password-ops', templateUrl: './password.ops.component.html', styles: [], standalone: false})
 export class PasswordOpsComponent extends OpsAbstract implements OnInit {

@@ -5,8 +5,10 @@ import {StorageService} from './storage.service';
 import {APIResponseType, IAPIResponse} from '../interfaces/apt.response.type';
 import {HttpClient, HttpStatusCode} from '@angular/common/http';
 import {Router} from '@angular/router';
-import {IAuthInfo} from '../../authentication/login-1/auth-info.model';
+import {IAuthInfo} from '../../authentication/login-2/auth-info.model';
 import {environment} from '../../../environments/environment';
+import {ParamType} from '../interfaces/Param.type';
+import {constructHeaders} from '../utils/utils';
 
 @Injectable({providedIn: 'root'})
 export class AuthService {
@@ -28,7 +30,8 @@ export class AuthService {
         return this.post(
             APP_NAVIGATION.authentication + API_METHOD.login,
             dto,
-            AUTH_SERVICE_REQUEST_TYPE.LOGIN
+            AUTH_SERVICE_REQUEST_TYPE.LOGIN,
+            [{key: 'X-UNIT-CODE', value: dto.unitCode}]
         );
     }
 
@@ -70,9 +73,10 @@ export class AuthService {
         }
     }
 
-    private post(pageName: string, dto: any, type: number): Observable<any> {
+    private post(pageName: string, dto: any, type: number, inputHeaders?: ParamType[]): Observable<any> {
+        const headers = constructHeaders(inputHeaders);
         return this.http
-            .post<IAPIResponse>(this.endPoint + pageName, dto)
+            .post<IAPIResponse>(this.endPoint + pageName, dto, {headers})
             .pipe(
                 map((apiResponse) => {
                     if (

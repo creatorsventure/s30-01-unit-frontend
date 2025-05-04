@@ -15,14 +15,14 @@ import {ResetPasswordComponent} from './reset-password/reset-password.component'
 
 const routes: Routes = [
     {
-        path: '',
+        path: 'login-1',
         component: Login1Component,
         data: {
             title: 'Login 1',
         },
     },
     {
-        path: 'login-2',
+        path: '',
         component: Login2Component,
         data: {
             title: 'Login 2',

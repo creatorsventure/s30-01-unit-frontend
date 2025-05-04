@@ -31,22 +31,26 @@ export class SignUp1Component {
             const tempObj = this.signUpForm.value;
             this.signupObj.password = tempObj.password;
             this.signupObj.confirmPassword = tempObj.confirmPassword;
-            console.log(this.signupObj);
+            // console.log(this.signupObj);
             this.crudService
-                .post(APP_NAVIGATION.signup, this.signupObj)
-                .subscribe({
-                    error: (err) => {
-                        this.alertService.alertHttpErrorResp(err, APP_NAVIGATION.signup);
-                    },
-                    complete: () => {
-                        this.modal.success({
-                            nzTitle: this.translate.instant('app.page.sign-up.signup-success-title'),
-                            nzContent: this.translate.instant('app.page.sign-up.signup-success-hint'),
-                            nzOnOk: () => this.handleOk(),
-                            nzOnCancel: () => this.handleCancel()
-                        });
-                    },
-                });
+                .post(APP_NAVIGATION.signup, this.signupObj, false,
+                    [
+                        {key: 'X-UNIT-ID', value: this.signupObj.entityId},
+                        {key: 'X-USER-ID', value: this.signupObj.userId}
+                    ]
+                ).subscribe({
+                error: (err) => {
+                    this.alertService.alertHttpErrorResp(err, APP_NAVIGATION.signup);
+                },
+                complete: () => {
+                    this.modal.success({
+                        nzTitle: this.translate.instant('app.page.sign-up.signup-success-title'),
+                        nzContent: this.translate.instant('app.page.sign-up.signup-success-hint'),
+                        nzOnOk: () => this.handleOk(),
+                        nzOnCancel: () => this.handleCancel()
+                    });
+                },
+            });
         }
     }
 
@@ -78,7 +82,7 @@ export class SignUp1Component {
         if (this.signupObj === null || this.signupObj === undefined) {
             this.alertService.error('app.message.failure.f005', true);
         } else {
-            // this.storage.remove(LOCAL_STORAGE_KEYS.SIGNUP_DATA);
+            this.storage.remove(LOCAL_STORAGE_KEYS.SIGNUP_DATA);
             // console.log('Received signupObj:', this.signupObj);
             this.isSignup = true;
             this.signUpForm = this.fb.group({

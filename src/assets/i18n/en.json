@@ -105,6 +105,8 @@
         "success-title": "Operation completed successfully",
         "failure-title": "Operation failed",
         "success-hint": "We have sent an email with login details. Please login to continue.",
+        "unitCode": "Unit Code",
+        "unitCode-hint": "Please input your unit code!",
         "username": "user id",
         "username-hint": "Please input your username!",
         "password": "Password",
@@ -301,6 +303,45 @@
           "selectedEngineIds": "Engine",
           "selectedOptionsId": "Options"
         }
+      },
+      "bin": {
+        "name": "Bin",
+        "description": "Bin can be created here!",
+        "label": {
+        }
+      },
+      "unit-options": {
+        "name": "Options",
+        "description": "Options can be created here!",
+        "label": {
+        }
+      },
+      "unit-key": {
+        "name": "Key",
+        "description": "Key can be created here!",
+        "label": {
+        }
+      },
+      "merchant": {
+        "name": "Merchant",
+        "description": "Merchant can be created here!",
+        "label": {
+        }
+      },
+      "device": {
+        "name": "Device",
+        "description": "Device can be created here!",
+        "label": {
+        }
+      },
+      "transaction": {
+        "name": "Transaction"
+      },
+      "transaction-summary": {
+        "name": "Today",
+        "description": "Today's transactions available here!",
+        "label": {
+        }
       }
     },
     "regxPatterns": {
@@ -336,6 +377,7 @@
         "f003": "Request tampered.",
         "f004": "Invalid OTP.",
         "f005": "Invalid signup data.",
+        "f006": "Please enter unit code and user id.",
         "COMMENT-02": "front-end only errors - start",
         "COMMENT-03": "core and front-end only errors - start",
         "000": "Problem occurred. Please try again later.",
@@ -363,6 +405,8 @@
         "022": "Please enter the user id",
         "023": "DB error occurred, Possible duplicate. Check the logs. ",
         "024": "Invalid URL.",
+        "025": "Internal API call failure.",
+        "026": "Id extraction failed.",
         "COMMENT-04": "core and front-end only errors - end",
         "COMMENT-05": "Org service errors - start",
         "COMMENT-06": "Org service errors - end"

@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {UntypedFormBuilder, UntypedFormGroup, Validators} from '@angular/forms';
 import {CRUDService} from '../../shared/services/crud.service';
 import {API_METHOD, APP_NAVIGATION} from '../../shared/routes/navigation.constant';
-import {IAuthInfo} from './auth-info.model';
+import {IAuthInfo} from '../login-2/auth-info.model';
 import {NzModalService} from 'ng-zorro-antd/modal';
 import {TranslateService} from '@ngx-translate/core';
 import {Router} from '@angular/router';

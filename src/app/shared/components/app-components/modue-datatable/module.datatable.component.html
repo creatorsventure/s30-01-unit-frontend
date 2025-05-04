@@ -105,7 +105,8 @@
             <span> {{ 'app.general.pagination.noData' | translate }} </span>
         </ng-template>
         <ng-template #footerTpl>
-            <a *ngIf="sessionPermissions.includes(permissions.add)" nz-button nzType="primary" nzSize="small"
+            <a *ngIf="addButtonDisplay && sessionPermissions.includes(permissions.add)" nz-button nzType="primary"
+               nzSize="small"
                routerLink="add">
                 <i nz-icon nzType="plus-circle"></i>{{ 'app.general.button.add' | translate }}
             </a>

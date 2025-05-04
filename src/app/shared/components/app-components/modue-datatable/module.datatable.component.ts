@@ -27,6 +27,9 @@ export class ModuleDatatableComponent implements OnInit {
     paginationDto: IPagination;
 
     @Input()
+    public addButtonDisplay = true;
+
+    @Input()
     public viewButtonDisplay = true;
 
     @Input()
