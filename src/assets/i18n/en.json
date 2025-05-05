@@ -22,7 +22,8 @@
         "resend-password-email": "Resend Password Email",
         "sign-up-email": "Send Sign Up Email",
         "validate": "Validate",
-        "send-otp": "Send OTP"
+        "send-otp": "Send OTP",
+        "rebase": "Rebase"
       },
       "page": {
         "id": "Id",
@@ -409,6 +410,7 @@
         "026": "Id extraction failed.",
         "COMMENT-04": "core and front-end only errors - end",
         "COMMENT-05": "Org service errors - start",
+        "O001": "Unable to sync options with organization.",
         "COMMENT-06": "Org service errors - end"
       }
     }
