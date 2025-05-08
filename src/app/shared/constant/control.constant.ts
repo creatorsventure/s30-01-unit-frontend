@@ -9,6 +9,14 @@ export const CONTROL_DESCRIPTION = {
         patternKey: 'app.regxPatterns.input',
         tooltip: 'app.general.tooltip.general'
     },
+    code: {
+        type: CONTROL_TYPE.INPUT,
+        minLength: 3,
+        maxLength: 250,
+        pattern: '^[a-zA-Z0-9]*$',
+        patternKey: 'app.regxPatterns.code',
+        tooltip: 'app.general.tooltip.general'
+    },
     inputSpecial: {
         type: CONTROL_TYPE.INPUT_SPECIAL,
         minLength: 3,

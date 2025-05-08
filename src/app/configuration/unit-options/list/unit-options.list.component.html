@@ -1,7 +1,30 @@
 <div nz-row nzJustify="end">
     <div nz-col>
-        <nz-space><input *nzSpaceItem [(ngModel)]="paginationDto.searchValue" class="search-input-size" nz-input
-                         placeholder="{{'app.general.pagination.searchValue' | translate}}" nzSize="small"/>
+        <nz-space>
+            <a nz-button *nzSpaceItem
+               nzType="default" nzSize="small" (click)="showModal()"
+               class="addButtonStyle">
+                <i nz-icon nzType="cloud-download"></i>
+                {{ 'app.general.button.org-options' | translate }}
+            </a>
+            <nz-modal [(nzVisible)]="isVisible" nzTitle="{{ 'app.general.button.org-options' | translate }}"
+                      [nzWidth]="'50%'"
+                      nzCancelText="{{'app.general.button.cancel' | translate}}"
+                      (nzOnCancel)="handleCancel()"
+                      nzOkText="{{'app.general.button.ok' | translate}}"
+                      (nzOnOk)="handleOk()">
+                <ng-container *nzModalContent>
+                    <nz-descriptions nzBordered>
+                        <nz-descriptions-item
+                                *ngFor="let item of options | keyvalue"
+                                nzTitle="{{ ('app.page.options.label.' + item.key) | translate }}">
+                            {{ item.value }}
+                        </nz-descriptions-item>
+                    </nz-descriptions>
+                </ng-container>
+            </nz-modal>
+            <input *nzSpaceItem [(ngModel)]="paginationDto.searchValue" class="search-input-size" nz-input
+                   placeholder="{{'app.general.pagination.searchValue' | translate}}" nzSize="small"/>
             <nz-select *nzSpaceItem id="searchSelect" [(ngModel)]="paginationDto.searchField">
                 <nz-option nzValue="" nzLabel="{{'app.general.pagination.searchField' | translate}}"></nz-option>
                 <nz-option nzValue="id" nzLabel="{{'app.general.pagination.id' | translate}}"></nz-option>

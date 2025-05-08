@@ -5,8 +5,7 @@ import {CRUDService} from '../../../shared/services/crud.service';
 import {FormBuilder} from '@angular/forms';
 import {AppControlService} from '../../../shared/services/app.control.service';
 import {AlertService} from '../../../shared/services/alert.service';
-import {APP_NAVIGATION} from '../../../shared/routes/navigation.constant';
-import {IUnitOptions} from '../model/unit-options.model.component';
+import {CONTROL_DESCRIPTION} from '../../../shared/constant/control.constant';
 
 @Component({selector: 'app-unitOptions-ops', templateUrl: './unit-options.ops.component.html', styles: [], standalone: false})
 export class UnitOptionsOpsComponent extends OpsAbstract implements OnInit {
@@ -25,7 +24,8 @@ export class UnitOptionsOpsComponent extends OpsAbstract implements OnInit {
     ngOnInit(): void {
         super.init();
         this.crudForm = this.fb.group({
-            /* exampleField: this.appCtrlService.generateFormControl(CONTROL_DESCRIPTION.input, this.object?.exampleField) */
+            partial: this.appCtrlService.generateFormControl(CONTROL_DESCRIPTION.switch, this.object?.partial),
+            allowExcess: this.appCtrlService.generateFormControl(CONTROL_DESCRIPTION.switch, this.object?.allowExcess),
         });
     }
 

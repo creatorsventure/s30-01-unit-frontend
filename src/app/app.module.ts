@@ -4,7 +4,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {en_US, NZ_I18N} from 'ng-zorro-antd/i18n';
 import {NzBreadCrumbModule} from 'ng-zorro-antd/breadcrumb';
 
-import {LocationStrategy, PathLocationStrategy, registerLocaleData,} from '@angular/common';
+import {LocationStrategy, PathLocationStrategy, registerLocaleData} from '@angular/common';
 import en from '@angular/common/locales/en';
 
 import {AppRoutingModule} from './app-routing.module';

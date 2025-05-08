@@ -140,4 +140,13 @@ export abstract class OpsAbstract {
             console.log('redirectToListPage invalid crudOps! ', this.crudOps);
         }
     }
+
+    onCountryCodeChange(event: string, componentName: string): void {
+        // console.log('onCountryCodeChange: ', event, componentName);
+        if (event) {
+            this.crudForm.get(componentName)?.setValue(event);
+        } else {
+            this.crudForm.get(componentName)?.reset();
+        }
+    }
 }

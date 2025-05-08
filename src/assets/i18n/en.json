@@ -19,11 +19,13 @@
         "yes": "Yes",
         "no": "No",
         "back": "Back",
+        "ok": "Ok",
+        "cancel": "Cancel",
         "resend-password-email": "Resend Password Email",
         "sign-up-email": "Send Sign Up Email",
         "validate": "Validate",
         "send-otp": "Send OTP",
-        "rebase": "Rebase"
+        "org-options": "Options managed by organization"
       },
       "page": {
         "id": "Id",
@@ -315,31 +317,62 @@
         "name": "Options",
         "description": "Options can be created here!",
         "label": {
+          "allowExcess": "Excess Amount",
+          "partial": "Partial Amount"
         }
       },
       "unit-key": {
         "name": "Key",
         "description": "Key can be created here!",
         "label": {
+          "commonName": "Common Name",
+          "organization": "Organization",
+          "organizationalUnit": "Unit",
+          "locality": "Locality",
+          "state": "State",
+          "country": "Country",
+          "email": "Email",
+          "validityYears": "Validity years",
+          "unitPrivateKeyPassword": "Password"
         }
       },
       "merchant": {
         "name": "Merchant",
         "description": "Merchant can be created here!",
         "label": {
+          "merchantCode": "Code",
+          "merchantId": "Id",
+          "legalName": "Legal Name",
+          "url": "Url",
+          "merchantCategoryId": "MCC Code",
+          "bankIdentificationCode": "BIC",
+          "type": "Type",
+          "adminName": "Admin Name",
+          "adminUserId": "Admin User Id",
+          "adminEmail": "Admin Email",
+          "adminMobileNumber": "Admin Mobile",
+          "adminCountryCode": "Admin Country Code",
+          "address": "Address"
         }
       },
       "device": {
         "name": "Device",
         "description": "Device can be created here!",
         "label": {
+          "selectedMerchantId": "Merchant",
+          "selectedUnitOptionsId": "Options",
+          "selectedUnitKeyId": "Key",
+          "currencyList": "Currency",
+          "schemeList": "Scheme",
+          "actionList": "Action",
+          "engineList": "Engine"
         }
       },
       "transaction": {
         "name": "Transaction"
       },
-      "transaction-summary": {
-        "name": "Today",
+      "transaction-today": {
+        "name": "Transactions today",
         "description": "Today's transactions available here!",
         "label": {
         }
@@ -347,6 +380,7 @@
     },
     "regxPatterns": {
       "input": "Upper case, Lower case, Numeric, Underscore, Space",
+      "code": "Upper case, Lower case, Numeric",
       "inputSpecial": "Upper case, Lower case, Numeric, Underscore, Comma, Slash, Hyphen, Dot",
       "numeric": "Numeric",
       "password": "Upper case, Lower case, Numeric, @ $ #",

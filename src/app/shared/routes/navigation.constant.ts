@@ -57,6 +57,9 @@ export const API_METHOD = {
     forgotPassword: '/forgot-password',
     resetPassword: '/reset-password',
     loadRoleMenu: '/load-role-menu',
+    resolveOrgOptions: '/resolve-org-options',
+    resolveOrgMcc: '/resolve-org-mcc',
+    resolveOrgUnitIdNameMaps: '/resolve-org-unit-id-name-maps',
 };
 
 export const LOCAL_STORAGE_KEYS = {

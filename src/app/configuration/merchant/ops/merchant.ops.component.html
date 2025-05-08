@@ -2,7 +2,76 @@
     <app-form-general [parentForm]="crudForm" [pageName]="pageName" [crudOps]="crudOps"
                       [object]="object"></app-form-general>
     <div nz-row>
-        <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="8" [nzXXl]="8"></div>
+        <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="8" [nzXXl]="8">
+            <app-form-input [controlDesc]="controlDesc.code" controlName="merchantCode"
+                            [pageName]="pageName" [crudOps]="crudOps" formControlName="merchantCode"/>
+
+        </div>
+        <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="8" [nzXXl]="8">
+            <app-form-input [controlDesc]="controlDesc.code" controlName="merchantId"
+                            [pageName]="pageName" [crudOps]="crudOps" formControlName="merchantId"/>
+
+        </div>
+        <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="8" [nzXXl]="8">
+            <app-form-input [controlDesc]="controlDesc.input" [isRequired]="false" controlName="bankIdentificationCode"
+                            [pageName]="pageName" [crudOps]="crudOps" formControlName="bankIdentificationCode"/>
+
+        </div>
+    </div>
+    <div nz-row>
+        <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="8" [nzXXl]="8">
+            <app-form-input [controlDesc]="controlDesc.input" [isRequired]="false" controlName="legalName"
+                            [pageName]="pageName" [crudOps]="crudOps" formControlName="legalName"/>
+
+        </div>
+        <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="8" [nzXXl]="8">
+            <app-form-input [controlDesc]="controlDesc.inputSpecial" controlName="address"
+                            [pageName]="pageName" [crudOps]="crudOps" formControlName="address"/>
+
+        </div>
+        <div nz-col [nzXs]="24" [nzSm]="24" [nzMd]="24" [nzLg]="24" [nzXl]="8" [nzXXl]="8">
+            <app-form-input [controlDesc]="controlDesc.url" controlName="url"
+                            [pageName]="pageName" [crudOps]="crudOps" formControlName="url"/>
+        </div>
+    </div>
+    <nz-divider/>
+    <div nz-row>
+        <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="8" [nzXXl]="8">
+            <app-form-input [controlDesc]="controlDesc.input" controlName="adminName"
+                            [pageName]="pageName" [crudOps]="crudOps" formControlName="adminName"/>
+
+        </div>
+        <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="8" [nzXXl]="8">
+            <app-form-email [controlDesc]="controlDesc.email" controlName="adminEmail"
+                            [pageName]="pageName" [crudOps]="crudOps" formControlName="adminEmail"/>
+
+        </div>
+        <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="8" [nzXXl]="8">
+            <app-form-input [controlDesc]="controlDesc.code" controlName="adminUserId"
+                            [pageName]="pageName" [crudOps]="crudOps" formControlName="adminUserId"/>
+
+        </div>
+    </div>
+    <div nz-row>
+        <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="8" [nzXXl]="8">
+            <app-form-phone [controlDesc]="controlDesc.phone" controlName="adminMobileNumber"
+                            [parentForm]="crudForm"
+                            (countryCodeChange)="onCountryCodeChange( $event, 'adminCountryCode')"
+                            [pageName]="pageName" [crudOps]="crudOps" formControlName="adminMobileNumber"/>
+        </div>
+    </div>
+    <nz-divider/>
+    <div nz-row>
+        <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="8" [nzXXl]="8">
+            <app-form-select-one formControlName="merchantCategoryId" controlName="merchantCategoryId"
+                                 [controlOptions]="mccIdNameMap"
+                                 [pageName]="pageName" [crudOps]="crudOps"/>
+        </div>
+        <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="8" [nzXXl]="8">
+            <app-form-select-one formControlName="type" controlName="type"
+                                 [controlOptions]="merchantTypeOptions"
+                                 [pageName]="pageName" [crudOps]="crudOps"/>
+        </div>
     </div>
     <app-form-audit [object]="object" [crudOps]="crudOps"></app-form-audit>
     <app-form-submit-buttons [crudOps]="crudOps" [crudForm]="crudForm"></app-form-submit-buttons>

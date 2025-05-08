@@ -45,10 +45,35 @@
             </a>
         </td>
         <td [nzEllipsis]="true">
-            {{ page.id }}
+            <ng-container *ngIf="page.id.length > 20; else idText">
+                  <span nz-tooltip [nzTooltipTitle]="page.id">
+                    {{ page.id | slice:0:20 }}...
+                  </span>
+            </ng-container>
+            <ng-template #idText>
+                <span>{{ page.id }}</span>
+            </ng-template>
         </td>
-        <td [nzEllipsis]="true">{{ page.name }}</td>
-        <td [nzEllipsis]="true">{{ page.description }}</td>
+        <td [nzEllipsis]="true">
+            <ng-container *ngIf="page.name.length > 20; else nameText">
+                  <span nz-tooltip [nzTooltipTitle]="page.name">
+                    {{ page.name | slice:0:20 }}...
+                  </span>
+            </ng-container>
+            <ng-template #nameText>
+                <span>{{ page.name }}</span>
+            </ng-template>
+        </td>
+        <td [nzEllipsis]="true">
+            <ng-container *ngIf="page.description.length > 20; else descText">
+                  <span nz-tooltip [nzTooltipTitle]="page.description">
+                    {{ page.description | slice:0:20 }}...
+                  </span>
+            </ng-container>
+            <ng-template #descText>
+                <span>{{ page.description }}</span>
+            </ng-template>
+        </td>
         <td [nzRight]="true">
             <nz-space>
                 <ng-container *ngIf="resendPasswordMailOption && sessionPermissions.includes(permissions.list)">

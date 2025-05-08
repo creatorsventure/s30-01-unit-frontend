@@ -10,7 +10,14 @@
                 }}
             </nz-form-label>
             <nz-form-control class="form-field-control">
-                <span>{{ object?.id }}</span>
+                <ng-container *ngIf="object?.id?.length > 20; else shortText">
+                  <span nz-tooltip [nzTooltipTitle]="object.id">
+                    {{ object.id | slice:0:20 }}...
+                  </span>
+                </ng-container>
+                <ng-template #shortText>
+                    <span>{{ object.id }}</span>
+                </ng-template>
             </nz-form-control>
         </nz-form-item>
     </div>

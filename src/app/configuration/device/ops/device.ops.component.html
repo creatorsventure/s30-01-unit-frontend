@@ -2,7 +2,45 @@
     <app-form-general [parentForm]="crudForm" [pageName]="pageName" [crudOps]="crudOps"
                       [object]="object"></app-form-general>
     <div nz-row>
-        <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="8" [nzXXl]="8"></div>
+        <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="8" [nzXXl]="8">
+            <app-form-select-one formControlName="selectedMerchantId" controlName="selectedMerchantId"
+                                 [controlOptions]="merchantIdNameMap"
+                                 [pageName]="pageName" [crudOps]="crudOps"/>
+        </div>
+        <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="8" [nzXXl]="8">
+            <app-form-select-one formControlName="selectedUnitOptionsId" controlName="selectedUnitOptionsId"
+                                 [controlOptions]="unitOptionsIdNameMap"
+                                 [pageName]="pageName" [crudOps]="crudOps"/>
+        </div>
+        <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="8" [nzXXl]="8">
+            <app-form-select-one formControlName="selectedUnitKeyId" controlName="selectedUnitKeyId"
+                                 [controlOptions]="unitKeyIdNameMap"
+                                 [pageName]="pageName" [crudOps]="crudOps"/>
+        </div>
+    </div>
+    <div nz-row>
+        <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="8" [nzXXl]="8">
+            <app-form-select-many formControlName="currencyList" controlName="currencyList"
+                                  [controlOptions]="unitIdNameMaps.get('currency')"
+                                  [pageName]="pageName" [crudOps]="crudOps"/>
+        </div>
+        <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="8" [nzXXl]="8">
+            <app-form-select-many formControlName="actionList" controlName="actionList"
+                                  [controlOptions]="unitIdNameMaps.get('action')"
+                                  [pageName]="pageName" [crudOps]="crudOps"/>
+        </div>
+        <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="8" [nzXXl]="8">
+            <app-form-select-many formControlName="schemeList" controlName="schemeList"
+                                  [controlOptions]="unitIdNameMaps.get('scheme')"
+                                  [pageName]="pageName" [crudOps]="crudOps"/>
+        </div>
+    </div>
+    <div nz-row>
+        <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="8" [nzXXl]="8">
+            <app-form-select-many formControlName="engineList" controlName="engineList"
+                                  [controlOptions]="unitIdNameMaps.get('engine')"
+                                  [pageName]="pageName" [crudOps]="crudOps"/>
+        </div>
     </div>
     <app-form-audit [object]="object" [crudOps]="crudOps"></app-form-audit>
     <app-form-submit-buttons [crudOps]="crudOps" [crudForm]="crudForm"></app-form-submit-buttons>
