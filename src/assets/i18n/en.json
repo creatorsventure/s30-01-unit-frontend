@@ -226,7 +226,7 @@
         "label": {
           "name": "Name",
           "password": "Password",
-          "confirmPassword": "Confirm password",
+          "confirmPassword": "Confirm",
           "userDetailId": "User id"
         }
       },

@@ -62,6 +62,10 @@ export class DeviceOpsComponent extends OpsAbstract implements OnInit {
         });
     }
 
+    getInnerMap(key: string): Map<string, string> | undefined {
+        return this.unitIdNameMaps?.get(key);
+    }
+
     override customUpdateValidations(): boolean {
         return true;
     }

@@ -65,7 +65,7 @@
             </ng-template>
         </td>
         <td [nzEllipsis]="true">
-            <ng-container *ngIf="page.description.length > 20; else descText">
+            <ng-container *ngIf="page.description?.length > 20; else descText">
                   <span nz-tooltip [nzTooltipTitle]="page.description">
                     {{ page.description | slice:0:20 }}...
                   </span>

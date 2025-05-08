@@ -19,7 +19,6 @@
     <nz-form-control class="form-field-control" *ngIf="crudOps === permissions.view">
         <ng-container *ngFor="let obj of control.value">
             <span *ngIf="controlOptions">{{ controlOptions[obj] }}</span>
-            &nbsp;
         </ng-container>
     </nz-form-control>
 </nz-form-item>

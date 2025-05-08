@@ -20,26 +20,34 @@
     </div>
     <div nz-row>
         <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="8" [nzXXl]="8">
-            <app-form-select-many formControlName="currencyList" controlName="currencyList"
-                                  [controlOptions]="unitIdNameMaps.get('currency')"
-                                  [pageName]="pageName" [crudOps]="crudOps"/>
+            <ng-container *ngIf="getInnerMap('currency') as currency">
+                <app-form-select-many formControlName="currencyList" controlName="currencyList"
+                                      [controlOptions]="currency"
+                                      [pageName]="pageName" [crudOps]="crudOps"/>
+            </ng-container>
         </div>
         <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="8" [nzXXl]="8">
-            <app-form-select-many formControlName="actionList" controlName="actionList"
-                                  [controlOptions]="unitIdNameMaps.get('action')"
-                                  [pageName]="pageName" [crudOps]="crudOps"/>
+            <ng-container *ngIf="getInnerMap('action') as action">
+                <app-form-select-many formControlName="actionList" controlName="actionList"
+                                      [controlOptions]="action"
+                                      [pageName]="pageName" [crudOps]="crudOps"/>
+            </ng-container>
         </div>
         <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="8" [nzXXl]="8">
-            <app-form-select-many formControlName="schemeList" controlName="schemeList"
-                                  [controlOptions]="unitIdNameMaps.get('scheme')"
-                                  [pageName]="pageName" [crudOps]="crudOps"/>
+            <ng-container *ngIf="getInnerMap('scheme') as scheme">
+                <app-form-select-many formControlName="schemeList" controlName="schemeList"
+                                      [controlOptions]="scheme"
+                                      [pageName]="pageName" [crudOps]="crudOps"/>
+            </ng-container>
         </div>
     </div>
     <div nz-row>
         <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="12" [nzXl]="8" [nzXXl]="8">
-            <app-form-select-many formControlName="engineList" controlName="engineList"
-                                  [controlOptions]="unitIdNameMaps.get('engine')"
-                                  [pageName]="pageName" [crudOps]="crudOps"/>
+            <ng-container *ngIf="getInnerMap('engine') as engine">
+                <app-form-select-many formControlName="engineList" controlName="engineList"
+                                      [controlOptions]="engine"
+                                      [pageName]="pageName" [crudOps]="crudOps"/>
+            </ng-container>
         </div>
     </div>
     <app-form-audit [object]="object" [crudOps]="crudOps"></app-form-audit>

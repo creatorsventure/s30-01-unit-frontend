@@ -52,6 +52,7 @@ export abstract class OpsAbstract {
     abstract customPostFailureOps(): void;
 
     createOrUpdate(finalObject?: any): void {
+        // console.log('createOrUpdate: form: ', this.crudForm.value, ' Object: ', finalObject);
         updateFormDirtyAndValueAndValidity(this.crudForm);
         if (this.crudForm.valid) {
             if (
