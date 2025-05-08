@@ -311,6 +311,11 @@
         "name": "Bin",
         "description": "Bin can be created here!",
         "label": {
+          "schemeId": "Scheme",
+          "instrumentType": "Instrument",
+          "type": "Type",
+          "start": "Start",
+          "end": "End"
         }
       },
       "unit-options": {

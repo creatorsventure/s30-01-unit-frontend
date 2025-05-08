@@ -59,6 +59,7 @@ export const API_METHOD = {
     loadRoleMenu: '/load-role-menu',
     resolveOrgOptions: '/resolve-org-options',
     resolveOrgMcc: '/resolve-org-mcc',
+    resolveOrgUnitScheme: '/resolve-org-unit-scheme',
     resolveOrgUnitIdNameMaps: '/resolve-org-unit-id-name-maps',
 };
 
